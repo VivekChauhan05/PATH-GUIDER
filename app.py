@@ -50,7 +50,7 @@ if user_prompt:
     st.chat_message("user").markdown(user_prompt)
 
     # Send user's message to Gemini-Pro and get the response
-    gemini_response = st.session_state.chat_session.send_message(user_prompt)
+    gemini_response = st.session_state.chat_session.send_message(f"You are an expert Career Counsellor for people all around the world. Your job is to guide the User into finding the best career path. Guide the user to the best possible career path based on your existing knowledge as well as {user_prompt}. By the end of the conversation you should have provided user with a career path that should be suited to them.Don't forget to say hello first")
 
     # Display Gemini-Pro's response
     with st.chat_message("assistant"):
